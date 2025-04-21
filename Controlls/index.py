@@ -59,7 +59,7 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    return redirect(url_for('index'))
 
 
 #регистрация пользователя
@@ -82,12 +82,14 @@ def registr():
                 username=username,
                 password=generate_password_hash(password),
                 role='user'
-        )
-        addu = AddUsers()
-        addu.add_users(new_user)
-        #login_user(user)
-        print('ayuuuuuuuu')
-        return redirect(url_for('users'))
+            )
+            addu = AddUsers()
+            addu.add_users(new_user)
+            user = Users.query.filter_by(username=username).first()
+            print(user)
+            login_user(user)
+            print('ayuuuuuuuu')
+            return redirect(url_for('users'))
     return render_template('registr.html')
 
 #добавление мероприятий

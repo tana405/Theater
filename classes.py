@@ -1,8 +1,6 @@
 class Ticket:
     pass
 
-class Mero():
-    pass
 
-class Concert():
+class Concert:
     pass
