@@ -1,0 +1,174 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Чтобы быть поверх остального контента */
+    background-color: white; /* Или любой фон, иначе он будет прозрачным */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Небольшая тень для читаемости */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    padding-top: 80px;
+}
+
+/* === Секция: Театр === */
+.theater-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+.theater-text {
+    flex: 1 1 400px;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.theater-text h2 {
+    font-size: 32px;
+    color: #005a8d;
+    margin-bottom: 10px;
+}
+
+.theater-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.theater-image {
+    flex: 1 1 300px;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.theater-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* === Секция: Сотрудники === */
+.team-section {
+    background: linear-gradient(to bottom, #3b3f58, #4a2e2e);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.team-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.team-section .subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #ccc;
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.card em {
+    display: block;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Секция мероприятий */
+.event-section {
+    background-color: #f8f8f8;
+    padding: 60px 20px;
+}
+
+.event-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.event-image {
+    flex: 1 1 50%;
+    min-width: 300px;
+}
+
+.event-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.event-text {
+    flex: 1 1 50%;
+    background-color: #f4f4f4;
+    padding: 40px;
+    box-sizing: border-box;
+    min-width: 300px;
+}
+
+.event-text h2 {
+    font-size: 2rem;
+    color: #0066a1;
+    margin-bottom: 10px;
+}
+
+.event-text .underline {
+    width: 40px;
+    height: 3px;
+    background-color: #000;
+    margin: 10px 0 20px;
+}
+
+.event-text p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
