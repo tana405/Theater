@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Покупка билета</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
+    <h1 style="text-align: center;">Доступные билеты</h1>
 
+    {% if data %}
+        <table>
+            <caption>Список билетов</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticket in data %}
+                <tr>
+                    <td>{{ ticket.id }}</td>
+                    <td>{{ ticket.username }}</td>
+                    <td>{{ ticket.role }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p style="text-align: center;">Данные отсутствуют.</p>
+    {% endif %}
 </body>
 </html>

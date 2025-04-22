@@ -100,12 +100,24 @@ def add_mer():
 #покупка билета
 @app.route('/buy_ticket', methods=["GET"])
 def buy_ticket():
-    return render_template('buy_ticket.html')
+    data = Users.query.all()  # Возвращает список объектов Data
+    return render_template('buy_ticket.html', data=data)
 
 #поиск актера
 @app.route('/search_actor', methods=["GET"])
 def search_actor():
     return render_template('search_actor.html')
+
+#добавление показа
+@app.route('/add_events', methods=["GET"])
+def add_events():
+    return render_template('add_events.html')
+
+
+#метод скользящей средней
+@app.route('/matem', methods=["GET"])
+def matem():
+    return render_template('matem.html')
 
 
 if __name__ == '__main__':
