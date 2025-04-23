@@ -113,6 +113,10 @@ def search_actor():
 def add_events():
     return render_template('add_events.html')
 
+#авторизация обычного пользователя
+@app.route('/add_report', methods=["GET"])
+def add_report():
+    return render_template('add_report.html')
 
 #метод скользящей средней
 @app.route('/matem', methods=["GET"])

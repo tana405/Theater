@@ -1,14 +1,13 @@
 from app import *
-from events import Events
 
 
-class Perfomans(Events, db.Model):
+class Shows(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), unique=True)
-    actors = db.Column(db.String(20))
+    date = db.Column(db.Datetime)
     description = db.Column(db.String(100))
     hall = db.Column(db.String(200))
     tickets = db.Column(db.Integer)
 
     def __repr__(self):
-        return f'<Perfomans {self.name}>'
+        return f'<Shows {self.name}>'
