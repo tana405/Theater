@@ -7,7 +7,7 @@ import sqlite3
 app = Flask(__name__)
 app.secret_key = 'awesome'
 app.template_folder = 'C:\\Users\\truno\\PycharmProjects\\Theater\\templates'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///theater.db'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Add your database URI here
