@@ -1,17 +1,16 @@
-
 from app import *
-from Models.genre import Genre
+from Models.hall import Hall
 
 
 with app.app_context():
     db.create_all()
-    new = Genre(
-        name='Мюзикл'
+    new = Hall(
+        type='Камерный'
     )
     db.session.add(new)
 
-    new = Genre(
-        name='Буффонада'
+    new = Hall(
+        type='Оперный'
     )
     db.session.add(new)
 

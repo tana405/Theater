@@ -1,25 +1,25 @@
 from app import *
-from Models.concert import Concerts
-from Controlls.add_concert import AddConcerts
-from Models.actor import Actors
-from Controlls.add_actor import AddActors
+from Models.concert import Concert
+from Controlls.add_concert import AddConcert
+from Models.actor import Actor
+from Controlls.add_actor import AddActor
 
 
 with app.app_context():
     db.create_all()
 
-    actor = Actors.query.filter_by(name='Алексеев Максим Петрович').first()
+    actor = Actor.query.filter_by(name='Алексеев Максим Петрович').first()
     if not actor:
-        actor = Actors(
+        actor = Actor(
             name='Алексеев Максим Петрович',
             age='35',
             biography='Известный пианист'
         )
         db.session.add(actor)
 
-    concert = Concerts.query.filter_by(name='Концерт имени Максимова М.М.').first()
+    concert = Concert.query.filter_by(name='Концерт имени Максимова М.М.').first()
     if not concert:
-        concert = Concerts(
+        concert = Concert(
             name='Концерт имени Максимова М.М.',
             description='Талантливый скрипач представляет свой репертуар всей стране',
             hall='Камерный'

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Купить билет</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_addmer.css') }}">
+</head>
+
+<body>
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{{ url_for('contacts') }}" class="btn btn-info">О нас</a></li>
+        <li class="nav-item"><a href="{{ url_for('add_mer') }}" class="nav-link px-2 link-secondary">Добавить мероприятие</a></li>
+        <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link px-2 link-secondary">Вернуться к авторизации</a></li>
+        <li class="nav-item"><a href="{{ url_for('add_events') }}" class="nav-link px-2 link-secondary">Добавить показ</a></li>
+    </ul>
+</header>
+
+<div class="wrapper">
+    <h2>Выбранный показ:</h2>
+    <p><strong>Дата:</strong> {{ show.date_start.strftime('%Y-%m-%d %H:%M') }}</p>
+    <p><strong>Зал:</strong> {{ show.hall_id }}</p>
+    <p><strong>ID события:</strong> {{ show.event_id }}</p>
+
+    <!-- Здесь может быть форма выбора места, количества билетов и т.п. -->
+    <form action="{{ url_for('buy_ticket') }}" method="post">
+        <input type="hidden" name="show_id" value="{{ show.id }}">
+
+        <div class="input-box">
+            <label>Количество билетов:</label>
+            <input type="number" name="quantity" min="1" required>
+        </div>
+
+        <div class="input-box button">
+            <input type="submit" value="Купить билет">
+        </div>
+    </form>
+</div>
+
+
+</html>
