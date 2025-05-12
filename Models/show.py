@@ -10,4 +10,4 @@ class Show(db.Model):
     hall_id = db.Column(db.Integer, db.ForeignKey('hall.id'))
 
     def __repr__(self):
-        return f'<Shows {self.name}>'
+        return f'<Shows {self.id}>'

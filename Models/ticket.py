@@ -1,4 +1,5 @@
 from app import *
+from Models.price import Price
 
 class Ticket(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -7,4 +8,4 @@ class Ticket(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __repr__(self):
-        return f'<Ticket {self.named}>'
+        return f'<Ticket {self.id}>'

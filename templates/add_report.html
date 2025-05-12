@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Сформировать отчет по мероприятию</title>
+    <title>Отчёт по показу</title>
 </head>
 <body>
+    <h2>Сформировать отчёт по показу</h2>
+    <form method="POST">
+        <label for="show_id">Выберите показ:</label>
+        <select name="show_id" id="show_id" required>
+            {% for show in shows %}
+                <option value="{{ show.id }}">
+                    {{ show.performance.name }} — {{ show.date_start }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Показать отчёт</button>
+    </form>
 
+    {% if report_data %}
+        <h3>Отчёт:</h3>
+        <ul>
+            <li><strong>Название спектакля:</strong> {{ report_data.performance_name }}</li>
+            <li><strong>Начало показа:</strong> {{ report_data.start }}</li>
+            <li><strong>Конец показа:</strong> {{ report_data.end }}</li>
+            <li><strong>Билетов продано:</strong> {{ report_data.tickets_sold }}</li>
+        </ul>
+    {% endif %}
 </body>
 </html>
